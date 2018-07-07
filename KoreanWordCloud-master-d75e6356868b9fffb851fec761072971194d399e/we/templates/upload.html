@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Upload</title>
+</head>
+<style>
+   body{
+      text-align: center;
+   }
+</style>
+<body bgcolor="FF6699">
+	<h1><font size=6 face="verdana">워드 클라우드에 사용하실 이미지를 올려주세요!
+	</font></h1>
+<form id = "upload-form" action = "{{url_for('upload')}}" method="POST" enctype="multipart/form-data">
+	<input type="file" name="file" accept="image/*" multiple>
+	<input type="submit" value="send">
+	<h1> </h1>
+	<img src="\static\mario.jpg" alt="Fail" width="300" height="300" />
+
+</body>
+</html>

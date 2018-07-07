@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Korean Word Cloud</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link href="http://bootstrapk.com/examples/cover/cover.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Korean World Cloud</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <!-- <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">Features</a></li>
+                  <li><a href="#">Contact</a></li> -->
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+                <h1 class="cover-heading">Korean Word Cloud</h1>
+                <p class="lead">Python 3.6을 기반으로 다국어를 지원하는 일반 유저용 Word Cloud Page 입니다. PNG 형식의 사진과 TXT 파일을 올려주세요.</p>
+                <p class="lead">
+                <p class="cover-heading">PNG 파일을 올려주세요</p>
+                <form id = "btn btn-lg btn-default" action = "{{url_for('upload')}}" method="POST" enctype="multipart/form-data" value="go">
+                <input type="file" name="file" accept="image/*" onchange="loadFile(event)" multiple>
+                &nbsp; &nbsp;
+                <p class="cover-heading">TXT 파일을 올려주세요</p>
+                <form id = "btn btn-lg btn-default" action = "{{url_for('upload')}}" method="POST" enctype="multipart/form-data" value="go">
+                <input type="file" name="txtfile" accept="text/html/*" id="exampleInputFile">
+                &nbsp; &nbsp;
+            <style>
+  textarea {
+  width: 40%;
+  height: 40px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+  }
+</style>
+<form method="POST">
+  <textarea name="textbox" style="color:blue"></textarea>
+  <input href="#" class="btn btn-lg btn-default" type="submit" value="send">
+</form>
+
+
+            </p>
+          </div>
+
+          <div class="imgexample">
+            <img id="output" width="200" height="200" border="2px" />
+            <script>
+            var loadFile = function(event) {
+            var output = document.getElementById('output');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            };
+            </script>
+        </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
